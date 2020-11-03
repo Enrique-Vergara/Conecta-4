@@ -1,0 +1,214 @@
+/* Elaborado por Luis Enrique Vergara Badillo  */
+
+:root {
+	--red: #FF4343;
+	--gray: #333333;
+	--darkgray: #747474;
+	--white: #f3f3f3;
+	--bgcolor: #f3f3f3;
+}
+
+@font-face {
+	font-family: Catcafe;
+	src: url("Fonts/CatCafe.ttf");
+	font-weight: lighter;
+}
+
+* {
+	color: white;
+}
+
+body {
+	background-color: var(--white);
+}
+
+#title, #footer, #options {
+	width: 100%;
+	height: 80px;
+	background-color: var(--red);
+	border-radius: 15px;
+	font-family: Catcafe;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+h1 {
+	padding-top: 10px;
+	color: var(--gray);
+}
+
+#Juego {
+	width: 100%;
+	height: 600px;
+	background-color: var(--white);
+}
+
+#Tablero {
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	float: left;
+}
+
+#Turno {
+	width: 500px;
+	height: 40px;
+	display: inline-block;
+	margin: 12px 12px 12px 12px;
+	padding: 12px 0px 0px 0px;
+	border-radius: 10px;
+	background-color: var(--gray);
+	font-family: Catcafe;
+	font-size: 20px;
+}
+
+#gato {
+	display: block;
+	margin: 0 auto;
+}
+
+#gato_container {
+	position: relative;
+	width: 100%;
+	color: var(--darkgray);
+}
+
+#Jugadores {
+	width: 50%;
+	height: 100%;
+	float: right;
+	text-align: center;
+}
+
+#J1, #J2 {
+	width: 500px;
+	height: 40%;
+	display: inline-block;
+	border-radius: 10px;
+	margin: 12px 0px 0px 0px;
+	background-color: var(--gray);
+	text-align: center;
+	font-family: Catcafe;
+	font-size: 18px;
+}
+
+#table1, #table2 {
+	width: 100%;
+	height: 100%;
+}
+
+input[type="color"], select {
+	background-color: var(--gray);
+	border: 0;
+	width: 100px;
+	height: 50%;
+}
+
+select {
+	border: 1px solid var(--darkgray);
+}
+
+#J1change, #J2change {
+	color: var(--gray);
+	border: 0;
+	border-radius: 5px;
+	font-family: Catcafe;
+	font-size: 16px;
+}
+
+#nav {
+	width: 500px;
+	height: 60px;
+	display: inline-block;
+	border-radius: 10px;
+	margin: 12px 0px 0px 0px;
+	/* background-color: #FF4343;  */
+}
+
+#tablenav {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.button {
+	width: 240px;
+	height: 80%;
+	background-color: var(--gray);
+	border: 0;
+	border-radius: 10px 10px 10px 10px;
+	font-family: Catcafe;
+	font-size: 16px;
+}
+
+.button:hover, #J1change:hover, #J2change:hover {
+	background-color: var(--red);
+}
+
+.button:active, #J1change:active, #J2change:active, select:hover, input[type="color"]:hover {
+	background-color: var(--darkgray);
+	color: var(--white);
+}
+
+#footer, #options {
+	height: auto;
+	font-size: 18px;
+}
+
+#options {
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+
+#footer {
+	background-color: var(--gray);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.opc {
+	color: var(--gray);
+	padding: 10px;
+}
+
+input[type="radio"] {
+	cursor: pointer;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 200px;
+	height: 10px;
+	border-radius: 5px;
+	background: var(--white);
+	outline: none;
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: var(--gray);
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+	#Tablero {
+		width: 100%;
+		height: 100%;
+	}
+	#Jugadores {
+		width: 100%;
+	}
+	#J1, #J2, #nav {
+		margin: 12px 18px 0px 18px;
+	}
+	#footer, #options {
+		margin-top: 20px;
+		float: left;
+	}
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Elaborado por Luis Enrique Vergara Badillo  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/styles.css">
+	<link rel="shortcut icon" href="Images/logo.png" type="image/x-icon">
+	<title>Conecta 4</title>
+
+</head>
+
+<body onload="init()">
+
+	<header id="title">
+		<h1 id="juegotitle">Juego del gato ^</h1>
+	</header>
+
+	<section id="Juego">
+
+		<section id="Tablero">
+			<section id="Turno">
+				<label id="turn">Turno: Jugador 1</label>
+			</section>
+
+			<div class="gato_container">
+				<canvas id="gato"></canvas>
+			</div>
+
+
+		</section>
+
+
+		<section id="Jugadores">
+
+			<article id="J1">
+				<table id="table1">
+					<tr>
+						<td><label>Nombre jugador 1</label></td>
+						<td><label id="J1name">Jugador 1 </label><button id="J1change" onclick="setName1()">Ingresar
+								Nombre</button>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>Color</label></td>
+						</td>
+						<td><input type="color" id="J1color" onchange="refreshColors('1')" value="#0e96e6"></td>
+					</tr>
+					<tr>
+						<td><label>Ficha</label></td>
+						</td>
+						<td>
+							<select id="J1token" onchange="refreshToken('1',false)">
+								<option value="x">X</option>
+								<option value="o">O</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Juegos ganados</label></td>
+						</td>
+						<td><label id="J1wins">0</label></td>
+						</td>
+					</tr>
+				</table>
+			</article>
+
+			<article id="J2">
+				<table id="table2">
+					<tr>
+						<td><label>Nombre jugador 2</label></td>
+						<td><label id="J2name">Jugador 2</label><button id="J2change" onclick="setName2()">Ingresar
+								Nombre</button>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label>Color</label></td>
+						</td>
+						<td><input type="color" id="J2color" onchange="refreshColors('2')" value="#2dd10d"></td>
+					</tr>
+					<tr>
+						<td><label>Ficha</label></td>
+						</td>
+						<td>
+
+							<select id="J2token" onchange="refreshToken('2',false)">
+								<option value="o">O</option>
+								<option value="x">X</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Juegos ganados</label></td>
+						</td>
+						<td><label id="J2wins">0</label></td>
+						</td>
+					</tr>
+				</table>
+			</article>
+
+			<nav id="nav">
+				<table id="tablenav">
+					<tr>
+						<td><button class="button" id="BTreiniciar" onclick="reiniciarRonda()">Limpiar Tablero</button>
+						</td>
+						<td><button class="button" id="BTnuevo" onclick="nuevoJuego()">Reiniciar Todo</button></td>
+					</tr>
+				</table>
+			</nav>
+
+		</section>
+
+	</section>
+
+	<section id="options">
+		<p>Opciones</p>
+
+		<p class="opc">Tipo de Juego</p>
+		<input type="radio" name="gameType" value="gato" onchange="opc_type('gato')">
+		<label for="gato">Gato</label>
+		<input type="radio" name="gameType" value="c4" checked onchange="opc_type('c4')">
+		<label for="c4">Conecta 4</label>
+
+		<p class="opc">Numero de cuadros</p>
+		<p id="nc">3</p>
+		<label id="minrange">3</label>
+		<input type="range" min="3" max="10" value="3" class="slider" id="numCuadros" step="1" oninput="setNumC()">
+		<label>10</label>
+
+		<p class="opc">Fichas exclusivas</p>
+		<input type="radio" id="ex_true" name="exclusive" value="true" onchange="opc_exc(true)">
+		<label for="true">True</label>
+		<input type="radio" id="ex_false" name="exclusive" value="false" checked onchange="opc_exc(false)">
+		<label for="true">False</label>
+
+		<p class="opc">Actualizar valores a mitad de juego</p>
+		<input type="radio" id="act_true" name="actvalores" value="true" checked onchange="opc_act(true)">
+		<label for="true">True</label>
+		<input type="radio" id="act_false" name="actvalores" value="false" onchange="opc_act(false)">
+		<label for="false">False</label>
+
+		<p class="opc">Luego de ganar inicia</p>
+		<input type="radio" id="win_ganador" name="al_ganar" value="ganador" onchange="opc_win('g')">
+		<label for="ganador">Ganador</label>
+		<input type="radio" id="win_ganador" name="al_ganar" value="perdedor" checked onchange="opc_win('p')">
+		<label for="perdedor">Perdedor</label>
+		<input type="radio" id="win_ganador" name="al_ganar" value="j1" onchange="opc_win('1')">
+		<label for="j1">J1</label>
+		<input type="radio" id="win_ganador" name="al_ganar" value="j2" onchange="opc_win('2')">
+		<label for="j2">J2</label>
+
+
+	</section>
+
+	<footer id="footer">
+		<p>Copyright ©</p>
+		<p>Sitio elaborado por:</p>
+		<img src="Images/profile picture.png" alt="Imagen de perfil" width="150px" height="150px">
+		<p>Luis Enrique Vergara Badillo</p>
+	</footer>
+
+	<script src="Scripts/javascript.js"></script>
+
+
+</body>
+
+</html>
