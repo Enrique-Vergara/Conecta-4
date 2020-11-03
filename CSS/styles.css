@@ -210,11 +210,13 @@ input[type="radio"] {
 	}
 	#Jugadores {
 		width: 100%;
+		margin: 0 auto;
 	}
 	#J1, #J2, #nav {
 		margin: 0 auto;
 	}
 	#footer, #options {
+		margin: 0 auto;
 		margin-top: 20px;
 		float: left;
 	}
